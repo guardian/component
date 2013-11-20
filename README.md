@@ -23,7 +23,10 @@
 
 #### Got DOM?
 
-    lion.attachTo();
+    var elem = document.getElementById('lion');
+    lion.attachTo(elem);
+    // OR
+    lion.attachToDefault();
     
 #### Got template?
 
