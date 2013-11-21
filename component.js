@@ -233,6 +233,16 @@ Component.prototype.hasState = function(state, elemName) {
 };
 
 /**
+ * @param {string|null} state
+ * @param {string|null} elemName
+ * return {Boolean}
+ */
+Component.prototype.removeState = function(state, elemName) {
+    var elem = elemName ? this.getElem(elemName) : this.elem;
+    return bonzo(elem).removeClass(this.conf().componentClass + (elemName ? '__'+ elemName : '') +'--'+ state);
+};
+
+/**
  * @return {Object}
  */
 Component.prototype.conf = function() {
